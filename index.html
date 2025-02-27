@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Poker Room</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <h1>Добро пожаловать в покер-рум!</h1>
+    <button onclick="startGame()">Начать игру</button>
+    <script>
+        function startGame() {
+            Telegram.WebApp.sendData("start_game");
+        }
+    </script>
+</body>
+</html>
