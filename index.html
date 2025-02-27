@@ -3,13 +3,51 @@
 <head>
     <title>Poker Room</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .cards {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        .card {
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 5px;
+            background-color: #fff;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Добро пожаловать в покер-рум!</h1>
-    <button onclick="startGame()">Начать игру</button>
+    <h1>Покер-рум</h1>
+    <div class="cards">
+        <div class="card">A♠</div>
+        <div class="card">K♥</div>
+    </div>
+    <button onclick="placeBet()">Повысить ставку</button>
+    <button onclick="fold()">Сбросить карты</button>
+    <button onclick="check()">Проверить</button>
+
     <script>
-        function startGame() {
-            Telegram.WebApp.sendData("start_game");
+        function placeBet() {
+            Telegram.WebApp.sendData("place_bet");
+        }
+
+        function fold() {
+            Telegram.WebApp.sendData("fold");
+        }
+
+        function check() {
+            Telegram.WebApp.sendData("check");
         }
     </script>
 </body>
